@@ -49,7 +49,7 @@ class ScrapperData extends Component {
 
   render() {
     const thisLogos = this.state.logos;
-    return <CardColumns className="col-7">
+    return <CardColumns className="col-8">
       {thisLogos.map(function name(item, i) {
         return <Card style={{ border: "1px solid #f3a4b526", overflow: "hidden" }}>
           <CardBody className="text-right">
