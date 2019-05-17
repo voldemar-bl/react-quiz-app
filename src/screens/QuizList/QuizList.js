@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import Header from '../../components/Header/Header'
 import { Card, CardImg, CardBody, CardTitle, CardText, Button } from 'reactstrap';
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
-import  "../../react-html";
 // import Card from '@material-ui/core/Card';
 import CardActionArea from '@material-ui/core/CardActionArea';
 import CardActions from '@material-ui/core/CardActions';
@@ -23,7 +22,6 @@ class QuizList extends Component {
     const { list, onPress, logout } = this.props;
     return (
       <div className="wrapper">
-        <ScrapperData/>
         <div className="main-panel" style={{borderTop:"1px solid #f3a4b5"}}>
         <Header logout={logout} />
           <div>
@@ -47,6 +45,8 @@ class QuizList extends Component {
           }
           )}
           </div>
+          <hr/>
+        <ScrapperData/>
         </div>
 
         </div>
