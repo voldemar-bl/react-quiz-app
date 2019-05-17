@@ -1,0 +1,12 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Poppins", sans-serif;
+}
+/* 
+.inputTransparent:-webkit-autofill,
+.inputTransparent:-webkit-autofill:hover,
+.inputTransparent:-webkit-autofill:focus,
+.inputTransparent:-webkit-autofill:active {
+    -webkit-transition:background ease 1s 99999s;
+} */
