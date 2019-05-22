@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/react_quiz_app/static/css/main.0aae58b5.chunk.css",
+    "main.js": "/react_quiz_app/static/js/main.46574aef.chunk.js",
+    "main.js.map": "/react_quiz_app/static/js/main.46574aef.chunk.js.map",
+    "runtime~main.js": "/react_quiz_app/static/js/runtime~main.97b20f23.js",
+    "runtime~main.js.map": "/react_quiz_app/static/js/runtime~main.97b20f23.js.map",
+    "static/css/2.ece1da2a.chunk.css": "/react_quiz_app/static/css/2.ece1da2a.chunk.css",
+    "static/js/2.4cda2178.chunk.js": "/react_quiz_app/static/js/2.4cda2178.chunk.js",
+    "static/js/2.4cda2178.chunk.js.map": "/react_quiz_app/static/js/2.4cda2178.chunk.js.map",
+    "index.html": "/react_quiz_app/index.html",
+    "precache-manifest.a8c0b152f8d33567386811a20ff56e5b.js": "/react_quiz_app/precache-manifest.a8c0b152f8d33567386811a20ff56e5b.js",
+    "service-worker.js": "/react_quiz_app/service-worker.js",
+    "static/css/2.ece1da2a.chunk.css.map": "/react_quiz_app/static/css/2.ece1da2a.chunk.css.map",
+    "static/css/main.0aae58b5.chunk.css.map": "/react_quiz_app/static/css/main.0aae58b5.chunk.css.map",
+    "static/media/css.jpg": "/react_quiz_app/static/media/css.77251c6a.jpg",
+    "static/media/html.jpg": "/react_quiz_app/static/media/html.3a0be16e.jpg",
+    "static/media/js3.jpg": "/react_quiz_app/static/media/js3.f7d27ab8.jpg",
+    "static/media/nucleo-icons.css": "/react_quiz_app/static/media/nucleo.f0b489a5.woff",
+    "static/media/index.css": "/react_quiz_app/static/media/roboto-latin-900italic.bc833e72.woff"
+  }
+}
