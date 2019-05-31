@@ -22,13 +22,11 @@ import { CircularProgressbar, buildStyles  } from 'react-circular-progressbar';
 import AnimatedProgressProvider from './AnimProg';
 import { easeQuadInOut } from "d3-ease";
 import 'react-circular-progressbar/dist/styles.css';
-// import Radio from '@material-ui/core/Radio';
-// import RadioGroup from '';
+
 import FormControlLabel from '@material-ui/core/FormControlLabel';
-// import FormControl from '@material-ui/core/FormControl';
-// import FormLabel from '@material-ui/core/FormLabel';
-// 
+
 import CircularProgress from '@material-ui/core/CircularProgress';
+import ScrapperData from '../../components/ScrapperData';
 
 import Typography from '@material-ui/core/Typography';
 
@@ -60,7 +58,6 @@ class QuizList extends Component {
     this.setState({
       radioVal: e.target.value,
     });
-    // setTimeout(this.updating,0)
 
   }
 
@@ -238,32 +235,10 @@ class QuizList extends Component {
         </CardBody>
          
       </Card>
-            {/* <Typography variant="display1" >
-              {quizName}({subQuizName})
-            </Typography>
-            <br />
-            <div className='resultDiv'>
-              <div >
-                <br />
-                <br />
-                <CircularProgress size={200} thickness={2} variant="static" value={scored} />
-                {this.state.similey}
-                <Typography variant="headline" >
-                  {scored} %
-                </Typography>
-                <br />
-                <Typography variant="subheading" >
-                  Total Questions: {started.qArr.length}
-                </Typography>
-                <Typography variant="subheading" >
-                  Correct: {correct}
-                </Typography>
-
-              </div>
-              <Button className="backBtn" size='large' variant="contained" color="primary" onClick={() => back()}>
-                back
-              </Button>
-            </div> */}
+            
+      <hr/>
+        <ScrapperData/>
+      
   </>
           :
         <>
@@ -308,45 +283,7 @@ class QuizList extends Component {
          
       </Card>
     </>
-          // <div> 
-          //   <Header /> 
-          //   <Typography variant="title" >
-          //     {min}:{sec}
-          //   </Typography>
-          //   <br/>
-          //   <div className='qstnDiv'>
-
-
-
-          //     <FormControl component="fieldset" style={{ margin: '15px 15px 30px 15px' }}>
-
-          //       <h3>{qstnNo + 1}. {started.qArr[qstnNo].question}</h3>
-          //       {/* <FormLabel component="legend">Gender</FormLabel> */}
-          //       <RadioGroup
-          //         // aria-label="Gender"
-          //         // name="gender1"
-          //         // className={classes.group}
-          //         value={this.state.radioVal}
-          //         onChange={this.handleChange}
-          //         // onChange={(e) => {this.handleChange(e)}} ref={(input)=> this.myinput = input}
-          //       >
-
-          //         <FormControlLabel value="1" name="option" control={<Radio />} label={started.qArr[qstnNo].option1}/>
-          //         <FormControlLabel value="2" name="option" control={<Radio />} label={started.qArr[qstnNo].option2}/>
-          //         <FormControlLabel value="3" name="option" control={<Radio />} label={started.qArr[qstnNo].option3}/>
-          //         <FormControlLabel value="4" name="option" control={<Radio />} label={started.qArr[qstnNo].option4}/>
-
-          //       </RadioGroup>
-
-          //     </FormControl>
-
-
-          //   </div>
-
-          //   {/* <Button className="nextBtn" variant="fab" color="primary" onClick={this.updating.bind(this)}>
-          //     <NavigateNext />
-          //   </Button> */}
-          // </div>
+          
 
         }
 </div>
@@ -358,13 +295,3 @@ class QuizList extends Component {
 
 export default QuizList;
 
-//CHILD --> PARENT STATE UPDATE
-//=============================
-
-//1) Create a function in Parent that
-//will update the State.
-
-//2) Pass the function in the Child's
-//Component's Props
-
-//3) Call that function from Child Props.

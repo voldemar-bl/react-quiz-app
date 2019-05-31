@@ -13,7 +13,7 @@ class ScrapperData extends Component {
     this.getDataFromApi();
   }
 
-  getDataFromApi = () => {
+  getDataFromApi = (e) => {
     fetch(
       "https://cors-anywhere.herokuapp.com/https://www.work.ua/jobs-kyiv-html%2C+css%2C+js/?advs=1&anyword=1"
     )

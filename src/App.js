@@ -1,6 +1,4 @@
 import React, { Component } from 'react';
-import { BrowserRouter as Router, Route, Link ,Switch} from "react-router-dom";
-
 import "./assets/scss/black-dashboard-react.scss";
 import "./assets/css/nucleo-icons.css";
 import Signup from './screens/Signup/Signup'
@@ -10,7 +8,7 @@ import QuizInfo from './screens/QuizInfo/QuizInfo'
 import StartQuiz from './screens/StartQuiz/StartQuiz'
 import './App.css';
 import 'typeface-roboto'
-import { Input } from '@material-ui/core';
+
 
 
 class App extends Component {
@@ -22,8 +20,8 @@ class App extends Component {
 
         {
           name: 'HTML',
-          image: require("./images/html.jpg") ,
-          description:'HTML stands for HyperText Markup Language, It defines the structure of a Web document by using a variety of tags and attributes.',
+          image: require("./images/html.jpg"),
+          description: 'HTML stands for HyperText Markup Language, It defines the structure of a Web document by using a variety of tags and attributes.',
           subQuiz: [
             {
               name: 'Quiz 1', questions: '3', time: '3 min', score: false,
@@ -47,7 +45,7 @@ class App extends Component {
                 {
 
                   question: "HTML stands for?",
-                  option1: "HYPER TEXT MARKUP LANGUAGE'",
+                  option1: "HYPER TEXT MARKUP LANGUAGE",
                   option2: "HTPER TEXT TELESCOPR",
                   option3: "HELP TEXT TERMINAL LANGUAGE",
                   option4: "NONE",
@@ -90,8 +88,8 @@ class App extends Component {
         },
         {
           name: 'CSS',
-          image: require("./images/css.jpg") ,
-          description:'CSS stands for Cascading Style Sheets, It describes how HTML elements are to be displayed on screen, paper, or in other media.',
+          image: require("./images/css.jpg"),
+          description: 'CSS stands for Cascading Style Sheets, It describes how HTML elements are to be displayed on screen, paper, or in other media.',
           subQuiz: [
             {
               name: 'Quiz 1', questions: '6', time: '3 min', score: false,
@@ -151,8 +149,8 @@ class App extends Component {
         },
         {
           name: 'JavaScript',
-          image:  require("./images/js3.jpg") ,
-          description:' JavaScript is a "client-side" programming language. JavaScript scripts are read, interpreted and executed in your Web browser.',
+          image: require("./images/js3.jpg"),
+          description: ' JavaScript is a "client-side" programming language. JavaScript scripts are read, interpreted and executed in your Web browser.',
           subQuiz: [
             {
               name: 'Quiz 1', questions: '4', time: '3 min', score: false,
@@ -273,9 +271,8 @@ class App extends Component {
       loginEmail: '',
       loginPass: '',
 
-      user: localStorage.getItem("user")    };
-
-    // this.userAvailable = this.userAvailable.bind(this)
+      user: localStorage.getItem("user")
+    };
 
     this.updateText = this.updateText.bind(this)
     this.showSignup = this.showSignup.bind(this)
@@ -293,8 +290,7 @@ class App extends Component {
   }
 
   async updateText(e) {
-    // console.log(e.target.name)
-    // console.log(e.target.value)
+
     const name = e.target.name;
     const value = e.target.value;
 
@@ -303,7 +299,7 @@ class App extends Component {
         userName: value
       })
       localStorage.setItem('userName', this.state.userName)
-      
+
     }
     else if (name.match('userEmail')) {
       await this.setState({
@@ -328,7 +324,6 @@ class App extends Component {
       })
     }
   }
-
   showSignup() {
     this.setState({
       userFlag: false,
@@ -336,33 +331,30 @@ class App extends Component {
       loginPass: ''
     })
   }
-
   showLogin() {
     this.setState({
       userFlag: true,
-      userName:'',
-      userEmail:'',
-      userPass:'',
+      userName: '',
+      userEmail: '',
+      userPass: '',
     })
   }
-   
-register() {
-  const {userName, userEmail, userPass} = this.state;
-  if(userName === '' || userEmail === '' || userPass === '') {
-   alert('Fill all the fields');
-   }  else {
-     this.setState({
-       userFlag: true,
-       userEmail:'',
-       userPass:'',
-     })
-   }
- }
-
-
+  register() {
+    const { userName, userEmail, userPass } = this.state;
+    if (userName === '' || userEmail === '' || userPass === '') {
+      alert('Fill all the fields');
+    } else {
+      this.setState({
+        userFlag: true,
+        userEmail: '',
+        userPass: '',
+      })
+    }
+  }
   async checkValidation() {
     const { loginEmail, loginPass } = this.state
-    if ((loginEmail.match(localStorage.getItem('userEmail'))) && (loginPass.match(localStorage.getItem('userPass')))) {
+    if ((loginEmail.match(localStorage.getItem('userEmail'))) 
+    && (loginPass.match(localStorage.getItem('userPass')))) {
       await this.setState({
         validFlag: true,
         user: true,
@@ -372,14 +364,9 @@ register() {
     }
     console.log("Email is Valid :", this.state.validFlag)
   }
-
-
   logout() {
     this.setState({
-      // quizIndex: null,
-      // subQuizIndex: null,
       user: 'false',
-      // userFlag: false,
       validFlag: false,
       loginEmail: '',
       loginPass: '',
@@ -389,7 +376,6 @@ register() {
     })
     localStorage.setItem('user', 'false')
   }
-
   joinQuiz(quizIndex) {
     const { quizzes } = this.state;
     this.setState({
@@ -398,50 +384,42 @@ register() {
       quizName: quizzes[quizIndex].name,
     });
   }
-
   showList() {
     this.setState({ quiz: null });
   }
-
   startQuiz(subQuizIndex) {
     const { quizzes, quizIndex } = this.state;
-
     this.setState({
       started: quizzes[quizIndex].subQuiz[subQuizIndex],
       subQuizIndex: subQuizIndex,
       subQuizName: quizzes[quizIndex].subQuiz[subQuizIndex].name,
     });
   }
-
   nextQstn(nextQstnNo) {
-
     this.setState({
       qstnNo: nextQstnNo + 1
     });
   }
-
   back() {
     this.setState({
       started: null,
       qstnNo: 0,
     });
   }
-
-
   render() {
     const { userFlag, validFlag, quizzes, quiz, started, qstnNo, quizName, subQuizName, user } = this.state;
 
     return (
-        <>
-      <center>
-      <div>
-        {(user === 'false' || user === null) && (userFlag && !validFlag) && <Login showSignup={this.showSignup} validation={this.checkValidation} updateText={this.updateText} />}
-        {(user === 'false' || user === null) && !userFlag && <Signup updateText={this.updateText} showLogin={this.showLogin} register={this.register}/>}
-        {(user === 'true' || (userFlag && validFlag)) && (!quiz && !started) && <QuizList list={quizzes} onPress={this.joinQuiz} logout={this.logout}/>}
-        {(user === 'true' || (userFlag && validFlag)) && (quiz && !started) && <QuizInfo quiz={quiz} onPress={this.startQuiz} onBack={this.showList} logout={this.logout} />}
-        {(user === 'true' || (userFlag && validFlag)) && started && <StartQuiz quizName={quizName} subQuizName={subQuizName} started={started} qstnNo={qstnNo} onPress={this.nextQstn} back={this.back} logout={this.logout} />}
-      </div>
-      </center>
+      <>
+        <center>
+          <div>
+            {(user === 'false' || user === null) && (userFlag && !validFlag) && <Login showSignup={this.showSignup} validation={this.checkValidation} updateText={this.updateText} />}
+            {(user === 'false' || user === null) && !userFlag && <Signup updateText={this.updateText} showLogin={this.showLogin} register={this.register} />}
+            {(user === 'true' || (userFlag && validFlag)) && (!quiz && !started) && <QuizList list={quizzes} onPress={this.joinQuiz} logout={this.logout} />}
+            {(user === 'true' || (userFlag && validFlag)) && (quiz && !started) && <QuizInfo quiz={quiz} onPress={this.startQuiz} onBack={this.showList} logout={this.logout} />}
+            {(user === 'true' || (userFlag && validFlag)) && started && <StartQuiz quizName={quizName} subQuizName={subQuizName} started={started} qstnNo={qstnNo} onPress={this.nextQstn} back={this.back} logout={this.logout} />}
+          </div>
+        </center>
       </>
     )
   }

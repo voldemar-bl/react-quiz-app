@@ -24,11 +24,11 @@ class AnimatedProgressProvider extends React.Component {
         isAnimated: !this.state.isAnimated
       });
     }
-  }
+  };
 
   componentWillUnmount() {
     window.clearInterval(this.interval);
-  }
+  };
 
   render() {
     return (
@@ -49,7 +49,7 @@ class AnimatedProgressProvider extends React.Component {
         {({ value }) => this.props.children(value)}
       </Animate>
     );
-  }
+  };
 }
 
 export default AnimatedProgressProvider;

@@ -2,13 +2,6 @@ import React, { Component } from 'react';
 import Header from '../../components/Header/Header'
 import { Card, CardImg, CardBody, CardTitle, CardText, Button, CardHeader } from 'reactstrap';
 
-// import Card from '@material-ui/core/Card';
-// import CardActionArea from '@material-ui/core/CardActionArea';
-// import CardActions from '@material-ui/core/CardActions';
-// import CardContent from '@material-ui/core/CardContent';
-// import CardMedia from '@material-ui/core/CardMedia';
-// import Button from '@material-ui/core/Button';
-// import Typography from '@material-ui/core/Typography';
 
 class QuizInfo extends Component {
   constructor(props) {
@@ -23,7 +16,6 @@ class QuizInfo extends Component {
         <div className="main-panel" style={{borderTop:"1px solid #f3a4b5"}}>
         <Header logout={logout} />
       
-        {/* <h1>{quiz.name}</h1> */}
         <div>
 
           {quiz.subQuiz.map((subQuiz, index) => {
@@ -78,18 +70,8 @@ class QuizInfo extends Component {
       </div>
     )
   }
-
 }
+
 
 export default QuizInfo;
 
-//CHILD --> PARENT STATE UPDATE
-//=============================
-
-//1) Create a function in Parent that
-//will update the State.
-
-//2) Pass the function in the Child's
-//Component's Props
-
-//3) Call that function from Child Props.
