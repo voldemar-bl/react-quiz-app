@@ -112,3 +112,8 @@
  bottom: 0 !important; 
  left: 0 !important;
 }
+
+
+input[validity="wrong"]{
+  border-color: #ff371fd1;
+}

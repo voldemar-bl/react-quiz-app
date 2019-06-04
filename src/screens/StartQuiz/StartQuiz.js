@@ -119,7 +119,7 @@ class QuizList extends Component {
     })
 
     this.saveScore();
-    // localStorage.setItem("score", JSON.stringify(score))
+    // localStorage.setItem("score", JSON.stringify(this.state.score))
   }
 
   saveScore() {
@@ -237,7 +237,7 @@ class QuizList extends Component {
       </Card>
             
       <hr/>
-        <ScrapperData/>
+        <ScrapperData workData={quizName} />
       
   </>
           :

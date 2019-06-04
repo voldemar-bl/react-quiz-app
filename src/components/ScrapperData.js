@@ -14,8 +14,9 @@ class ScrapperData extends Component {
   }
 
   getDataFromApi = (e) => {
+    const { workData } = this.props;
     fetch(
-      "https://cors-anywhere.herokuapp.com/https://www.work.ua/jobs-kyiv-html%2C+css%2C+js/?advs=1&anyword=1"
+      "https://cors-anywhere.herokuapp.com/https://www.work.ua/jobs-kyiv-"+workData+"/?advs=1&anyword=1"
     )
       .then(response => response.text())
       .then(data => {

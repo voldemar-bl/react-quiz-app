@@ -353,14 +353,26 @@ class App extends Component {
   }
   async checkValidation() {
     const { loginEmail, loginPass } = this.state
-    if ((loginEmail.match(localStorage.getItem('userEmail'))) 
-    && (loginPass.match(localStorage.getItem('userPass')))) {
+    
+    if ((loginEmail === localStorage.getItem('userEmail')) && (loginPass === localStorage.getItem('userPass'))) {
       await this.setState({
         validFlag: true,
         user: true,
         auth: true
-      })
+      }) 
       localStorage.setItem('user', 'true')
+    } else if ((loginEmail != localStorage.getItem('userEmail')) && (loginPass != localStorage.getItem('userPass')))  {
+      document.getElementById("exampleEmail").setAttribute("validity","wrong");
+      document.getElementById("examplePassword").setAttribute("validity","wrong");
+      setTimeout(function() {
+       document.getElementById("exampleEmail").removeAttribute("validity");
+       document.getElementById("examplePassword").removeAttribute("validity");
+      },1200);
+    } else {
+        document.getElementById("examplePassword").setAttribute("validity","wrong");
+        setTimeout(function() {
+         document.getElementById("examplePassword").removeAttribute("validity");
+        },1200);
     }
     console.log("Email is Valid :", this.state.validFlag)
   }
