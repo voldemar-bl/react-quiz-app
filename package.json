@@ -36,7 +36,7 @@
     "request": "^2.88.0",
     "request-promise": "^4.2.4",
     "typeface-roboto": "0.0.54",
-    "validator": "^10.11.0"
+    "validator": "^13.7.0"
   },
   "devDependencies": {
     "gh-pages": "^2.0.1",
